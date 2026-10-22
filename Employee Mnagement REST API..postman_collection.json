@@ -8,12 +8,528 @@
   },
   "item": [
     {
-      "name": "New Request",
+      "name": "Search, Filter, Pagination and Sorting",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\r\n  {\r\n    \"name\": \"FIDA\",\r\n    \"email\": \"fida@brightwave.example\",\r\n    \"department\": \"Sales\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Fahmida\",\r\n    \"email\": \"fahmida@brightwave.example\",\r\n    \"department\": \"Marketing\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Ruksana\",\r\n    \"email\": \"ruksana@brightwave.example\",\r\n    \"department\": \"Human Resources\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Farsana\",\r\n    \"email\": \"farsana@brightwave.example\",\r\n    \"department\": \"Finance\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Shahala\",\r\n    \"email\": \"shahala@brightwave.example\",\r\n    \"department\": \"Information Technology\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Fatima\",\r\n    \"email\": \"fatima@brightwave.example\",\r\n    \"department\": \"Customer Support\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Mohsina\",\r\n    \"email\": \"mohsina@brightwave.example\",\r\n    \"department\": \"Operations\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Mukhtar\",\r\n    \"email\": \"mukhtar@brightwave.example\",\r\n    \"department\": \"Business Development\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Marof\",\r\n    \"email\": \"marof@brightwave.example\",\r\n    \"department\": \"Quality Assurance\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Sinan\",\r\n    \"email\": \"sinan@brightwave.example\",\r\n    \"department\": \"Data Analytics\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Aflah\",\r\n    \"email\": \"aflah@brightwave.example\",\r\n    \"department\": \"Administration\",\r\n    \"status\": \"ACTIVE\"\r\n  }\r\n]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employees?search=F&status=ACTIVE&page=0&size=5&sortBy=name&direction=asc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees"
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "F"
+            },
+            {
+              "key": "status",
+              "value": "ACTIVE"
+            },
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "5"
+            },
+            {
+              "key": "sortBy",
+              "value": "name"
+            },
+            {
+              "key": "direction",
+              "value": "asc"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Employees",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Employee by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees/6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Employee",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"RAIBA\",\r\n  \"email\": \"raiba@brightwave.example\",\r\n  \"department\": \"Sales\",\r\n  \"status\": \"ACTIVE\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employees",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create bulk employees",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n  {\r\n    \"name\": \"Amina\",\r\n    \"email\": \"amina@brightwave.example\",\r\n    \"department\": \"Sales\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Nihala\",\r\n    \"email\": \"nihala@brightwave.example\",\r\n    \"department\": \"Marketing\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Hiba\",\r\n    \"email\": \"hiba@brightwave.example\",\r\n    \"department\": \"Human Resources\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Safwan\",\r\n    \"email\": \"safwan@brightwave.example\",\r\n    \"department\": \"Finance\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Ramees\",\r\n    \"email\": \"ramees@brightwave.example\",\r\n    \"department\": \"Information Technology\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Nadiya\",\r\n    \"email\": \"nadiya@brightwave.example\",\r\n    \"department\": \"Customer Support\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Shamil\",\r\n    \"email\": \"shamil@brightwave.example\",\r\n    \"department\": \"Operations\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Lubna\",\r\n    \"email\": \"lubna@brightwave.example\",\r\n    \"department\": \"Business Development\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Adil\",\r\n    \"email\": \"adil@brightwave.example\",\r\n    \"department\": \"Quality Assurance\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Rifana\",\r\n    \"email\": \"rifana@brightwave.example\",\r\n    \"department\": \"Data Analytics\",\r\n    \"status\": \"ACTIVE\"\r\n  },\r\n  {\r\n    \"name\": \"Zayan\",\r\n    \"email\": \"zayan@brightwave.example\",\r\n    \"department\": \"Administration\",\r\n    \"status\": \"ACTIVE\"\r\n\r\n\r\n\r\n\r\n\r\n\r\nzz",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employees/bulk",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees",
+            "bulk"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update employees",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"FIDA\",\r\n  \"email\": \"fida@brightwave.example\",\r\n  \"department\": \"Sales\",\r\n  \"status\": \"ACTIVE\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employees/7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Employees",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees",
+            "5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Employees",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees?search=FIDA",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees"
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "FIDA"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Filter by Status",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
           "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Pagination",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees?search=F&status=ACTIVE&page=0&size=5&sortBy=name&direction=asc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees"
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "F"
+            },
+            {
+              "key": "status",
+              "value": "ACTIVE"
+            },
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "5"
+            },
+            {
+              "key": "sortBy",
+              "value": "name"
+            },
+            {
+              "key": "direction",
+              "value": "asc"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Sorting",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees?sortBy=name&direction=asc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees"
+          ],
+          "query": [
+            {
+              "key": "sortBy",
+              "value": "name"
+            },
+            {
+              "key": "direction",
+              "value": "asc"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update employee",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\r\n    {\r\n\"name\": \"Jasim\",\r\n\"email\": \"jasimmalik@brightwave.example\",\r\n\"department\": \"Sales\",\r\n\"status\": \"ACTIVE\"\r\n},\r\n{\r\n\"name\": \"Hamza\",\r\n\"email\": \"hamzavt@brightwave.example\",\r\n\"department\": \"Sales\",\r\n\"status\": \"ACTIVE\"\r\n}\r\n]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employees/bulk",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees",
+            "bulk"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search, Filter, Pagination and Sorting",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update employee",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"name\": \"Fahmida\",\r\n\"email\": \"fahmida@brightwave.example\",\r\n\"department\": \"Marketing\",\r\n\"status\": \"ACTIVE\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employees/9",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees",
+            "9"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update employee",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"name\": \"shantha\",\r\n\"email\": \"shanthass@brightwave.example\",\r\n\"department\": \"Marketing\",\r\n\"status\": \"ACTIVE\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/employees/7",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees",
+            "7"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search employees",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees?search=sales",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees"
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "sales"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "pagination",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees?page=1&size=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "size",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Sorting",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees?sortBy=email&direction=desc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees"
+          ],
+          "query": [
+            {
+              "key": "sortBy",
+              "value": "email"
+            },
+            {
+              "key": "direction",
+              "value": "desc"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete employee",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/employees/14",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "employees",
+            "14"
+          ]
         }
       },
       "response": []
