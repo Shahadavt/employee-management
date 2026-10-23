@@ -76,8 +76,8 @@ Configure `src/main/resources/application.properties`:
 ```properties
 spring.application.name=employee-management
 spring.datasource.url=jdbc:mysql://localhost:3306/employee_db
-spring.datasource.username=root
-spring.datasource.password=root
+spring.datasource.username=
+spring.datasource.password=
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.open-in-view=false
